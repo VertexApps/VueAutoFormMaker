@@ -30,11 +30,9 @@ app.component("VueAutoFormMaker", VueAutoFormMaker);
 </template>
 
 <script>
-//Import VueAutoFormMaker into your View
 import VueAutoFormMaker from "@/vue-auto-form-maker.vue";
 
-export default defineComponent({
-  name: "ServeDev",
+export default({
   components: {
     VueAutoFormMaker,
   },
@@ -98,3 +96,7 @@ Input fields:
     },
   },
 ```
+
+## License
+
+Copyright (c) 2021 [Valeri Shnaider](https://github.com/VertexApps). Released under the [MIT license]
