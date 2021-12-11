@@ -1,19 +1,16 @@
 {
   "name": "vue-auto-form-maker",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "",
-
   "main": "dist/vue-auto-form-maker.ssr.js",
   "browser": "dist/vue-auto-form-maker.esm.js",
   "module": "dist/vue-auto-form-maker.esm.js",
   "unpkg": "dist/vue-auto-form-maker.min.js",
-
   "files": [
     "dist/*",
     "src/**/*.vue"
   ],
   "sideEffects": false,
-
   "scripts": {
     "serve": "vue-cli-service serve dev/serve.js",
     "prebuild": "rimraf ./dist",
@@ -22,10 +19,7 @@
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
-
-  "dependencies": {
-  },
-
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
