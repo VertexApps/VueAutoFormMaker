@@ -13,7 +13,7 @@ export default /*#__PURE__*/ defineComponent({
       },
     };
   },
-  mounted() {
+  created() {
     console.log(this.$props.inputFields);
     this.fields = this.$props.inputFields;
     this.fields.forEach((element, index) => {
@@ -21,6 +21,7 @@ export default /*#__PURE__*/ defineComponent({
         placeholder: this.toCapitalizedStr(element.value),
         vmodel: element.value.replace(/\s/g, "").toLowerCase(),
         isMandatory: element.isMandatory,
+        error: false,
       };
       this.models = { ...this.models, [this.inputData[index].vmodel]: "" };
     });
@@ -42,13 +43,14 @@ export default /*#__PURE__*/ defineComponent({
     validateForm() {
       var res = false;
       for (let index = 0; index < this.inputData.length; index++) {
+        this.inputData[index].error = false;
         if (this.inputData[index].isMandatory) {
           if (
             this.models[this.inputData[index].vmodel] == null ||
             this.models[this.inputData[index].vmodel] == ""
           ) {
-            this.error.msg =
-              "Please fill out " + this.inputData[index].placeholder;
+            this.inputData[index].error = true;
+            this.error.msg = "Please fill out " + this.inputData[index].vmodel;
             return;
           }
         }
@@ -87,6 +89,10 @@ export default /*#__PURE__*/ defineComponent({
       type: Array,
       default: [{ value: "Username", isMandatory: true }],
     },
+    errorClass: {
+      type: String,
+      default: "afm-error-input",
+    },
   },
 });
 </script>
@@ -95,8 +101,8 @@ export default /*#__PURE__*/ defineComponent({
   <div :class="wrapperClass">
     <div v-for="(field, index) in inputData" :key="index">
       <input
-        :class="inputClass"
-        :placeholder="field.vmodel"
+        :class="[this.inputData[index].error ? errorClass : '', inputClass]"
+        :placeholder="field.placeholder"
         v-model="models[field.vmodel]"
       />
     </div>
@@ -111,13 +117,17 @@ export default /*#__PURE__*/ defineComponent({
 
 <style scoped>
 .afm-form-wrapper {
-  display: block;
-  width: 400px;
-  margin: 25px auto;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  text-align: center;
-  padding: 25px;
+  padding: 1rem 0.5rem 1rem 0.2rem;
+  -webkit-box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+    0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+  box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%), 0 1px 1px 0 rgb(0 0 0 / 14%),
+    0 1px 3px 0 rgb(0 0 0 / 12%);
+  border-radius: 1%;
+  margin-bottom: 2rem;
+  flex-direction: column;
+  display: flex;
+  margin: 0;
+  align-items: center;
 }
 .afm-auto-form-maker p {
   margin: 0 0 1em;
@@ -136,5 +146,9 @@ export default /*#__PURE__*/ defineComponent({
 .afm-outlined {
   background: none;
   border: 1px solid black;
+}
+
+.afm-error-input {
+  border-color: red;
 }
 </style>

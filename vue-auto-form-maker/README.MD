@@ -27,7 +27,7 @@ app.component("VueAutoFormMaker", VueAutoFormMaker);
 ```js
 <template>
   <div id="app">
-    <VueAutoFormMaker @formSubmit="formSubmit" :inputFields="testData" />
+    <VueAutoFormMaker :inputFields="testData" />
   </div>
 </template>
 
@@ -71,6 +71,7 @@ Css Classes:
 - inputClass: CSS class of the individual input field(String,'afm-field-class')
 - inputClass: CSS class of the individual input field(String,'afm-field-class')
 - btnClass: CSS class of the submit button
+- errorClass: CSS class of the error state
 
 Input fields:
 
@@ -98,6 +99,10 @@ Input fields:
     },
   },
 ```
+
+## Change Log
+
+V0.0.7 - Added support for custom error css
 
 ## License
 

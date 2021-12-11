@@ -12,8 +12,6 @@ export default defineComponent({
       testData: [
         { value: "Username", isMandatory: true },
         { value: "Password", isMandatory: true },
-        { value: "Email", isMandatory: false },
-        { value: "Input4", isMandatory: true },
       ],
       formData: {},
     };
