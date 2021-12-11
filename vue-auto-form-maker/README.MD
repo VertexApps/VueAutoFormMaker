@@ -84,3 +84,17 @@ Input fields:
         { value: "Input4", isMandatory: true },
       ],
 ```
+
+## Events
+
+- @formSubmit - called when the submit button is pressed, will return an object with all the data
+
+```js
+ methods: {
+    formSubmit(data) {
+      //Do what you want with data from the from
+      //Data will contain:
+      //{input1:'inputValue',input2:'inputValue'....}
+    },
+  },
+```
