@@ -10,9 +10,9 @@ export default defineComponent({
   data() {
     return {
       testData: [
-        { value: "Input1", isMandatory: true },
-        { value: "Input2", isMandatory: true },
-        { value: "Input3", isMandatory: false },
+        { value: "Username", isMandatory: true },
+        { value: "Password", isMandatory: true },
+        { value: "Email", isMandatory: false },
         { value: "Input4", isMandatory: true },
       ],
       formData: {},

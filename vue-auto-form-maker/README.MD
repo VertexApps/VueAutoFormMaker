@@ -1,6 +1,8 @@
 # vue-auto-form-maker
 
-> This is a very early version
+> This is a very early version - updates will follow
+
+![Alt Text](https://media.giphy.com/media/waX1f2hb7hbXNGgMUj/giphy.gif)
 
 This package lets you create a dynamic form with validation and customizable css classes
 
