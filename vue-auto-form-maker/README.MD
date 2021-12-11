@@ -102,7 +102,7 @@ Input fields:
 
 ## Change Log
 
-V0.0.7 - Added support for custom error css
+V0.0.8 - Added support for custom error css
 
 ## License
 
