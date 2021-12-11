@@ -28,6 +28,6 @@ export default defineComponent({
 
 <template>
   <div id="app">
-    <VueAutoFormMaker @formSubmit="formSubmit" :fieldNames="testData" />
+    <VueAutoFormMaker @formSubmit="formSubmit" :inputFields="testData" />
   </div>
 </template>

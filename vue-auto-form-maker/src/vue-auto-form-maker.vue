@@ -14,7 +14,8 @@ export default /*#__PURE__*/ defineComponent({
     };
   },
   mounted() {
-    this.fields = this.$props.fieldNames;
+    console.log(this.$props.inputFields);
+    this.fields = this.$props.inputFields;
     this.fields.forEach((element, index) => {
       this.inputData[index] = {
         placeholder: this.toCapitalizedStr(element.value),
@@ -82,7 +83,7 @@ export default /*#__PURE__*/ defineComponent({
       type: String,
       default: "afm-btn-class afm-outlined",
     },
-    fieldNames: {
+    inputFields: {
       type: Array,
       default: [{ value: "Username", isMandatory: true }],
     },

@@ -25,7 +25,7 @@ app.component("VueAutoFormMaker", VueAutoFormMaker);
 ```js
 <template>
   <div id="app">
-    <VueAutoFormMaker @formSubmit="formSubmit" :fieldNames="testData" />
+    <VueAutoFormMaker @formSubmit="formSubmit" :inputFields="testData" />
   </div>
 </template>
 
@@ -56,4 +56,31 @@ export default defineComponent({
   },
 });
 </script>
+```
+
+## Props
+
+Submit Button:
+
+- buttonText: text of the Submit button ( String , "Submit" )
+- showButton: Show or hide the submit button (Bool,true)
+
+Css Classes:
+
+- wrapperClass: Css class for the form Wrapper (String,'afm-form-wrapper')
+- inputClass: CSS class of the individual input field(String,'afm-field-class')
+- inputClass: CSS class of the individual input field(String,'afm-field-class')
+- btnClass: CSS class of the submit button
+
+Input fields:
+
+- inputFields: Object containing the data for each field
+
+```js
+ inputFields: [
+        { value: "Input1", isMandatory: true },
+        { value: "Input2", isMandatory: true },
+        { value: "Input3", isMandatory: false },
+        { value: "Input4", isMandatory: true },
+      ],
 ```
